@@ -10,8 +10,10 @@
 6. Open `C:\xampp\phpMyAdmin\config.inc.php` and look for the line that says `$cfg['Servers'][$i]['user']` and change the username and password to `root`
 7. Install <a href="https://www.postman.com/">Postman</a>, an API development toolkit.
 8. Run Postman and import `Beacon.postman_collection.json` from `C:\xampp\htdocs\Beacon`
-9. Import the current MySQL database by running `C:\xampp\mysql\bin\mysql.exe  -u root -p beacon < C:\xampp\htdocs\Beacon\beacon.sql`
-10. Open `C:\xampp\apache\conf\httpd.conf` and at the very bottom of the file add a new line that that says `AccessFileName htaccess.txt`
-11. Create a new file in the `C:\xampp\apache\conf` directory called htaccess.txt, and on the very first line type `php_value session.gc_maxlifetime 31557600`
-12.  Start the Apache and MySQL services from the XAMPP control panel
-13. That's it! To interact with the database, either run POST requests from Postman or send POST requests from the frontend
+9.  Start the MySQL services from the XAMPP control panel
+10. Impor the MySQL database by running `C:\xampp\mysql\bin\mysql.exe  -u root -p beacon < C:\xampp\htdocs\Beacon\beacon.sql`
+11. Open `C:\xampp\apache\conf\httpd.conf` and at the very bottom of the file add a new line that that says `AccessFileName htaccess.txt`
+12. Create a new file in the `C:\xampp\apache\conf` directory called htaccess.txt, and on the very first line type `php_value session.gc_maxlifetime 31557600`
+13. Start the Apache service from the XAMPP control panel.
+14. That's it! To interact with the database, either run POST requests from Postman or send POST requests from the frontend
+
