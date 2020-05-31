@@ -7,7 +7,7 @@
 3. Upon installation, open `C:\xampp `and run `xampp-control.exe`
 4. Clone the backend into the htdocs folder (run `cd C:\xampp\htdocs` and then run `git clone https://github.com/Susorodni/Beacon.git`)
 5. Checkout the backend branch (run `git checkout backend`)
-6. Open `C:\xampp\phpMyAdmin\config.inc.php` and look for the line that says `$cfg['Servers'][$i]['user']` and change the username and password to `root`
+6. Open `C:\xampp\phpMyAdmin\config.inc.php` and look for the lines that say `$cfg['Servers'][$i]['user']` and `$cfg['Servers'][$i]['password']` and change the username and password to `root`
 7. Install <a href="https://www.postman.com/">Postman</a>, an API development toolkit.
 8. Run Postman and import `Beacon.postman_collection.json` from `C:\xampp\htdocs\Beacon`
 9.  Start the MySQL services from the XAMPP control panel
