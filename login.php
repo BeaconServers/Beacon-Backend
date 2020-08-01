@@ -4,10 +4,10 @@ session_start();
 ?>
 
 <?php
-if(session_id() == '') {
+if(!isset($_SESSION["username"])) {
     $servername = "localhost";
     $serverUsername = "root";
-    $serverPassword = "root";
+    $serverPassword = "";
     $dbname = "beacon";
 
     $username = $_POST["username"];
