@@ -1,25 +1,9 @@
 <?php
-// Start the session
-session_start();
-?>
+require 'server.php';
 
-<?php
 if(!isset($_SESSION["username"])) {
-    $servername = "localhost";
-    $serverUsername = "root";
-    $serverPassword = "";
-    $dbname = "beacon";
-
     $username = $_POST["username"];
     $password = $_POST["password"];
-
-// Create connection
-    $conn = new mysqli($servername, $serverUsername, $serverPassword, $dbname);
-// Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
 
     $res = $conn->query("SELECT * FROM users");
     if ($res->num_rows > 0) {
