@@ -14,5 +14,6 @@
 10. Start the Apache service from the XAMPP control panel (`C:\xampp\xampp-control.exe`).
 11. That's it! To interact with the database, either run POST requests from Postman or send POST requests from the frontend
 
-#### Linux (script):
-Simply download and run `setup_ubuntu.py`, be patient as it can take a while.
+#### Ubuntu (script):
+1. Install the requirements (which the latest Ubuntu releases should come with) by running `pip3 install -r req.txt`
+2. Simply download and run `setup_ubuntu.py`, be patient as it can take a while.
