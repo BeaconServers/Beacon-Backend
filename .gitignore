@@ -6,7 +6,4 @@ pyvenv.cfg
 /share/
 /include/
 /game_passwords/
-/share/
-/include/
-/lib64/
 /venv/
