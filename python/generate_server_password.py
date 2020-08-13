@@ -28,7 +28,7 @@ def generate_new_password(games):
         current_minute = time.strftime("%M")
 
         with open('game_passwords/' + game + '.pwd', 'w') as f:
-            f.write(password + '\n' + current_minute)
+            f.write(password[0:50] + '\n' + current_minute)
 
 
 generate_new_password(['css'])
