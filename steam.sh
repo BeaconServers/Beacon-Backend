@@ -1,1 +1,0 @@
-$(sudo -u steam /home/steam/CSS/srcds_run -console -game cstrike -maxplayers 20 -port 27015 +ip 0.0.0.0 +map de_dust2 +sv_password password)

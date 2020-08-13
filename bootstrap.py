@@ -21,11 +21,6 @@ def main():
 def start_steam():
     t = threading.current_thread()
     print("Starting Counter Strike Source server...")
-    '''
-    os.system("sudo -u steam /home/steam/CSS/srcds_run -console -game cstrike -maxplayers 20 -port 27015 +ip "
-              "0.0.0.0 +map de_dust2 "
-              "+sv_password password")
-    '''
 
     steam = pexpect.spawn('sudo -u steam /home/steam/CSS/srcds_run -console -game cstrike -maxplayers 20 -port '
                           '27015 +ip 0.0.0.0 +map de_dust2 +sv_password password')
