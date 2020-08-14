@@ -5,7 +5,7 @@ $username = $_POST["username"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-$password = password_hash($password, PASSWORD_DEFAULT);
+$password = password_hash($password, PASSWORD_ARGON2ID);
 
 $sql = "INSERT INTO users (username, password, email)
 VALUES ('$username', '$password', '$email')";
