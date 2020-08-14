@@ -10,6 +10,7 @@ import threading
 
 games = ["css", "tf2"]
 
+
 # Upon the signal to kill the program, the exit handler does some cleanup
 def exit_handler(sig, frame):
     print('Stopping password generator...')
@@ -33,6 +34,7 @@ def generate_new_password(games):
 
 generate_new_password(['css'])
 schedule.every(1).minutes.do(generate_new_password, games)
+
 
 def generate_passwords():
     print("Generating passwords")
