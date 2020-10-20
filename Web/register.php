@@ -10,10 +10,14 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 $sql = "INSERT INTO users (username, password, email)
 VALUES ('$username', '$password', '$email')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+	if ($conn->query($sql) === TRUE) {
+    	echo "Registered successfully";
+	} else {
+    	echo "Error: " . $sql . "<br>" . $conn->error;
+	}
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+	echo "Invalid email";
 }
 
 $conn->close();
