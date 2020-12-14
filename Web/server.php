@@ -1,8 +1,8 @@
 <?php
 session_start();
-$servername = "localhost";
+$servername = "mysql";
 $serverUsername = "root";
-$serverPassword = "";
+$serverPassword = "root";
 $dbname = "beacon";
 
 // Create connection
@@ -11,3 +11,4 @@ $conn = new mysqli($servername, $serverUsername, $serverPassword, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+?>

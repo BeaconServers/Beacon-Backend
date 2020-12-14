@@ -21,6 +21,7 @@ if(!isset($_SESSION["username"])) {
         echo "Your username or password is incorrect!";
     }
 } else {
+    echo "Already signed in! \n";
     echo session_id();
 }
 ?>
