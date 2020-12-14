@@ -14,12 +14,11 @@ if(!isset($_SESSION["username"])) {
                 $_SESSION["password"] = $password;
 
                 echo session_id();
-                break;
+                die('Logged in!');
             }
         }
-    } else {
-        echo "Your username or password is incorrect!";
-    }
+	echo "Your username or password is incorrect!";
+    } 
 } else {
     echo "Already signed in! \n";
     echo session_id();
