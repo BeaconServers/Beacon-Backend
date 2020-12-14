@@ -1,7 +1,7 @@
 # Beacon Backend
 ## Welcome to the superior git repo ;)!
 ### Setup
-1. Go to (the Docker installation instructions)[FROM php:7.2.7-fpm-alpine3.7] and choose your platform and install docker-compose
+1. Go to [the Docker installation instructions](https://docs.docker.com/compose/install/) and choose your platform and install docker-compose
 2. Clone this git repositry anywhere on your computer
 3. Simply run `docker-compose up --remove-orphans` from the root directory of the repository (you may need to run the command with sudo on Linux)
 You don't need the `--remove-orphans` option on docker-compose up, however, it automatically removes docker images that aren't being used (like for example, if the version of a docker image changes in development). 
