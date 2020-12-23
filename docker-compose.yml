@@ -11,6 +11,7 @@ services:
     depends_on:
       - php
       - mysql
+      - steam_stuff
     networks:
       - frontend
       - backend
@@ -28,6 +29,14 @@ services:
     environment:
       MYSQL_DATABASE: beacon
       MYSQL_ROOT_PASSWORD: root
+
+
+  steam_stuff:
+    volumes:
+      - ./steam_stuff/:/home/steam/
+    ports:
+      - "27015:27015"
+    build: './steam_docker'
 
 networks:
   frontend:

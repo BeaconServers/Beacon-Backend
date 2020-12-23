@@ -8,3 +8,5 @@ pyvenv.cfg
 /game_passwords/
 /venv/
 lib64
+/steam_stuff/csgo/
+/steam_stuff/Steam/
