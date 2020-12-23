@@ -3,14 +3,16 @@
 ### Setup
 1. Go to [the Docker installation instructions](https://docs.docker.com/compose/install/) and choose your platform and install docker-compose
 2. Clone this git repositry anywhere on your computer
-3. Simply run `docker-compose up --remove-orphans` from the root directory of the repository (you may need to run the command with sudo on Linux)
+3. Simply run `docker-compose up --build --remove-orphans` from the root directory of the repository (you may need to run the command with sudo on Linux)
 You don't need the `--remove-orphans` option on docker-compose up, however, it automatically removes docker images that aren't being used (like for example, if the version of a docker image changes in development). 
 
+Likewise, the `--build` option tells Docker to build the latest version of the package, if anything has been updated. While that isn't necessary either, it's strongly recommended unless you know what you're doing.
+
 ### **Warnings** (PLEASE READ)
-This repo is **NOT** production ready. Do **NOT** run this on any computer that is exposed to the internet, it can and will be hacked! This doesn't mean that the servers are insecure to run locally, however, there are just no security patches applied, that's why this is the developer branch. Running this server on your regular old laptop or PC at home is just fine.
+This repo is **NOT** production ready. Do **NOT** run this on any computer that is exposed to the internet, it can and will be hacked! This doesn't mean that the servers are insecure to run locally, however, there are just no security patches applied, that's why this is the developer branch. Running this server on your regular old laptop or PC at home is just fine. By exposed to the internet, I mean with port forwarding enabled. If you don't know what this means, then you're fine ;). 
 
 
 ### Notes:
-* The repo in this state does not run the games servers (yet), but it will. Right now, just use it to mess with logging in and registering users, but it will have the ability to run and interface with game servers soon (just a few commits away).
+* The entire backend is very, very large (when running the game servers). As of writing, running both the web server stuff (Apache + PHP + MySQL) and a CS:GO server takes up **27 GB** of hard drive space. I know that this is a lot, and that those running low on storage space will probably not be able to run it. The solution in the future will be to make running the game servers optional, i.e. by providing an argument to docker-compose. That way our boys in blue at the frontend can mess w. backend web stuff, without having to sacrifice a ton of disk space.
 
-* Due to the nature of Docker, running the backend takes up quite a bit of space, and uses a good chunk of memory (compared to running natively that is). At the time of writing, the docker images take up around 2GB, and after installing Ubuntu images for the games server (not done yet), I expect it to take at least 10GB. As for memory, it takes up maybe half a GB to run the server. This isn't much, and even my laptop can handle it easily, just be warned when running this on low-end machines that it may slow your computer.
+* As for memory and cpu time, it's not very intensive, with or without SteamCMD It runs fine on my 2.6GHZ, 4 GB of RAM laptop, with no noticable performance drop, though as of writing it uses 7% of my CPU time, and 10% of memory after running for about a minute, though it uses around 80% on startup (still no noticable performance drop).
