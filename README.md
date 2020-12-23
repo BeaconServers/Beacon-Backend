@@ -4,6 +4,8 @@
 1. Go to [the Docker installation instructions](https://docs.docker.com/compose/install/) and choose your platform and install docker-compose
 2. Clone this git repositry anywhere on your computer
 3. Simply run `docker-compose up --build --remove-orphans` from the root directory of the repository (you may need to run the command with sudo on Linux)
+4. Due to quirks in the way Docker works (see 5bcf6bba6debdae6a6b6f601290f73d085a28c53), running `docker-compose up` for the first time will download CS:GO during the run phase, instead of during the build stage. What this means to anyone who cares is that the first time you run SteamCMD, it will take a little while before the entire backend is up and running, even though the web server will be up. Basically, the first time you run the backend, it won't be fully working until CS:GO is downloaded, so don't open any issues about not being able to access the game servers, even though the web server is up ;)
+
 You don't need the `--remove-orphans` option on docker-compose up, however, it automatically removes docker images that aren't being used (like for example, if the version of a docker image changes in development). 
 
 Likewise, the `--build` option tells Docker to build the latest version of the package, if anything has been updated. While that isn't necessary either, it's strongly recommended unless you know what you're doing.
