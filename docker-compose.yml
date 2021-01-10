@@ -21,6 +21,8 @@ services:
       - ./public_html/:/var/www/html/
   mysql:
     image: mysql:5.7
+    logging:
+        driver: none
     networks:
       - backend
     command: --init-file /data/application/beacon.sql

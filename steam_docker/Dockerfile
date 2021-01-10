@@ -12,7 +12,7 @@ WORKDIR /steamcmd
 USER steam
 ADD --chown=steam:steam https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz /steamcmd
 RUN wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz \
-  && tar xvf steamcmd_linux.tar.gz
+  && tar xvf steamcmd_linux.tar.gzs
 EXPOSE 27015/udp
 WORKDIR /home/steam/
-CMD /home/steam/run.sh
+CMD sh /home/steam/run.sh
