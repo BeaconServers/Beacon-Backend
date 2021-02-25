@@ -5,7 +5,7 @@ use std::collections::HashMap;
 use lazy_static::lazy_static;
 
 #[derive(RustEmbed)]
-#[folder = "Public"]
+#[folder = "Web"]
 struct Asset;
 
 //All the regexes used to validate the HTTP header
@@ -149,7 +149,7 @@ fn format_response(mut page: &str, mut response_code: u16) -> String {
 
     let not_found_closure = || {
         if page == "" {
-            Asset::get("page.html").unwrap()
+            Asset::get("index.html").unwrap()
         } else {
             response_code = 404;
             Asset::get("404.html").unwrap()
