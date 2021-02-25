@@ -11,3 +11,7 @@ lib64
 /steam_stuff/csgo/
 /steam_stuff/Steam/
 /steam_stuff/.steam/
+
+# Added by cargo
+
+/target

@@ -1,0 +1,14 @@
+[package]
+name = "Beacon-Backend"
+version = "0.1.0"
+authors = ["William Batista <bootlegbilly@protonmail.ch>", "Luke Gaston"]
+edition = "2018"
+
+[profile.release]
+lto = "fat"
+opt-level = 3
+codegen-units = 1
+
+[dependencies]
+threadpool = "1"
+
