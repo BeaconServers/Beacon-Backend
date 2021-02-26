@@ -46,16 +46,18 @@ lazy_static! {
 pub async fn validate_request(buffer: String) -> (String, String, Option<String>, Option<String>) {            
     //This is wasteful, since it performs the Regex check twice
     return if Regex::new(GET_RE).unwrap().is_match(&buffer) {
+        let get_searched_captures = 
+            GET_COMBINED_PATH_RE
+            .captures(&buffer)
+            .unwrap();
+    
         let path =
-        GET_COMBINED_PATH_RE
-        .captures(&buffer)
-        .unwrap()
-        .get(2)
-        .map_or("", |m| m.as_str());
+            get_searched_captures
+            .get(2)
+            .map_or("", |m| m.as_str());
     
         let request = GET_COMBINED_PATH_RE
-            .captures(&buffer)
-            .unwrap()
+            get_searched_captures
             .get(3)
             .map_or("", |m| m.as_str());
 
