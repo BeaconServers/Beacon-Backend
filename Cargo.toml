@@ -10,7 +10,6 @@ opt-level = 3
 codegen-units = 1
 
 [dependencies]
-async-std = {version = "1", features = ["attributes"] }
 tokio = { version = "1", features = ["full"] }
 futures = "0.3"
 reinda = "0.2"
