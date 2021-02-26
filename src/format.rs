@@ -131,7 +131,7 @@ async fn format_response(mut page: &str, response_code: u16) -> Result<String, B
     Ok(format!(
         "HTTP/1.1 {} {} Content-Length: {:?}\r\n\r\n{}",
         response_code,
-        RESPONSE_CODE_HASHMAP.await.get(&response_code).unwrap(),
+        RESPONSE_CODE_HASHMAP.get(&response_code).unwrap(),
         embedded_page_str.len(),
         embedded_page_str
     ))
