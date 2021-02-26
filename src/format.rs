@@ -56,7 +56,7 @@ pub async fn validate_request(buffer: String) -> (String, String, Option<String>
             .get(2)
             .map_or("", |m| m.as_str());
     
-        let request = GET_COMBINED_PATH_RE
+        let request =
             get_searched_captures
             .get(3)
             .map_or("", |m| m.as_str());
