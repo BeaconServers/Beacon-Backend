@@ -3,21 +3,28 @@
 use tokio::net::{TcpStream, TcpListener};
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::spawn;
+use tokio::runtime::Builder;
 use format::validate_request;
 
 mod format;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let listener = TcpListener::bind("127.0.0.1:7878").await?;
 
-    loop {
-        let (tcp_stream, _) = listener.accept().await?;
-        spawn(async move {
-           handle_connection(tcp_stream).await.unwrap();
-           
-        });
-    }
+    let rt =  Builder::new_multi_thread().build().unwrap();
+    
+    rt.block_on(async {
+        let listener = TcpListener::bind("127.0.0.1:7878").await?;
+
+        loop {
+            let (tcp_stream, _) = listener.accept().await?;
+            spawn(async move {
+            handle_connection(tcp_stream).await.unwrap();
+            
+            });
+        }
+    
+    })
         
 }
 
